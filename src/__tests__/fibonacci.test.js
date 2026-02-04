@@ -7,3 +7,7 @@ test("Returns 0 if the input is 1", () => {
 test("Returns 0 and 1 if the input is 2", () => {
   expect(iterateFibonacci(1)).toBe([0, 1]);
 });
+
+test("Returns a Fibonacci sequence", () => {
+  expect(iterateFibonacci(8)).toBe([0, 1, 1, 2, 3, 5, 8, 13]);
+});
