@@ -4,6 +4,10 @@ test("Zeroth Fibonacci term is 0", () => {
   expect(findFibonacciTerm(0)).toBe([0]);
 });
 
+test("First Fibonacci term is 1", () => {
+  expect(findFibonacciTerm(1)).toBe([1]);
+});
+
 test("Returns 0 if the input is 1", () => {
   expect(iterateFibonacci(1)).toBe([0]);
 });
