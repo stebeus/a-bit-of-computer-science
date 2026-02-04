@@ -1,6 +1,6 @@
-# JavaScript template
+# A bit of computer science
 
-JavaScript test template.
+Introductory data structures and algorithms assignments.
 
 ## License
 
