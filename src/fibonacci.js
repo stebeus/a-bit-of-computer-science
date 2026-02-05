@@ -6,7 +6,7 @@ function findFibonacciTerm(number) {
   const conjugate = oneHalf * (1 - squareRootOfFive);
 
   const fibonacciTerm =
-    (goldenRatio ** number - conjugate ** number) / sqrtOfFive;
+    (goldenRatio ** number - conjugate ** number) / squareRootOfFive;
 
   return Math.round(fibonacciTerm);
 }
