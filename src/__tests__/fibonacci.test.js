@@ -24,3 +24,7 @@ test("Returns 0 and 1 if the input is 2", () => {
 test("Returns a Fibonacci sequence", () => {
   expect(iterateFibonacci(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
 });
+
+test("Recurses 0 if the input is 1", () => {
+  expect(recurseFibonacci(1)).toStrictEqual([0]);
+});
