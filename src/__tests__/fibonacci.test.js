@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { findFibonacciTerm } from "../fibonacci";
+import { findFibonacciTerm, iterateFibonacci } from "../fibonacci";
 
 test("Zeroth Fibonacci term is 0", () => {
   expect(findFibonacciTerm(0)).toBe(0);
