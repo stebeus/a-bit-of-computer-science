@@ -11,10 +11,10 @@ function findFibonacciTerm(number) {
   return Math.round(fibonacciTerm);
 }
 
-function iterateFibonacciSequence(sequenceSize) {
+function iterateFibonacciSequence(length) {
   const sequence = [];
 
-  for (let number = 0; number < sequenceSize; number++) {
+  for (let number = 0; number < length; number++) {
     const fibonacciTerm = findFibonacciTerm(number);
     sequence.push(fibonacciTerm);
   }
@@ -22,15 +22,15 @@ function iterateFibonacciSequence(sequenceSize) {
   return sequence;
 }
 
-function recurseFibonacciSequence(sequenceSize, number = 0, sequence = []) {
-  if (number === sequenceSize) {
+function recurseFibonacciSequence(length, number = 0, sequence = []) {
+  if (number === length) {
     return sequence;
   }
 
   const fibonacciTerm = findFibonacciTerm(number);
   sequence.push(fibonacciTerm);
 
-  return recurseFibonacciSequence(sequenceSize, number + 1, sequence);
+  return recurseFibonacciSequence(length, number + 1, sequence);
 }
 
 export {
