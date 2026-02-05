@@ -9,4 +9,15 @@ function findFibonacciTerm(number) {
   return Math.round(term);
 }
 
-export { findFibonacciTerm };
+function iterateFibonacci(sequenceSize) {
+  const sequence = [];
+
+  for (let number = 0; number < sequenceSize; number++) {
+    const fibonacciTerm = findFibonacciTerm(number);
+    sequence.push(fibonacciTerm);
+  }
+
+  return sequence;
+}
+
+export { findFibonacciTerm, iterateFibonacci };
