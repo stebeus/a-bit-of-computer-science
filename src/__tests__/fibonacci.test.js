@@ -17,15 +17,15 @@ test("Seventh Fibonacci term is 13", () => {
   expect(findFibonacciTerm(7)).toBe(13);
 });
 
-test("Returns 0 if the input is 1", () => {
+test("Iterates 0 if the input is 1", () => {
   expect(iterateFibonacciSequence(1)).toStrictEqual([0]);
 });
 
-test("Returns 0 and 1 if the input is 2", () => {
+test("Iterates 0 and 1 if the input is 2", () => {
   expect(iterateFibonacciSequence(2)).toStrictEqual([0, 1]);
 });
 
-test("Returns a Fibonacci sequence", () => {
+test("Iterates a Fibonacci sequence", () => {
   expect(iterateFibonacciSequence(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
 });
 
