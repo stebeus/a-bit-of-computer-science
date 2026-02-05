@@ -4,9 +4,11 @@ function findFibonacciTerm(number) {
 
   const goldenRatio = oneHalf * (1 + squareRootOfFive);
   const conjugate = oneHalf * (1 - squareRootOfFive);
-  const term = (goldenRatio ** number - conjugate ** number) / sqrtOfFive;
 
-  return Math.round(term);
+  const fibonacciTerm =
+    (goldenRatio ** number - conjugate ** number) / sqrtOfFive;
+
+  return Math.round(fibonacciTerm);
 }
 
 function iterateFibonacci(sequenceSize) {
