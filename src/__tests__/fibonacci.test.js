@@ -1,8 +1,8 @@
 import { expect, test } from "vitest";
 import {
   findFibonacciTerm,
-  iterateFibonacci,
-  recurseFibonacci,
+  iterateFibonacciSequence,
+  recurseFibonacciSequence,
 } from "../fibonacci";
 
 test("Zeroth Fibonacci term is 0", () => {
@@ -18,21 +18,21 @@ test("Seventh Fibonacci term is 13", () => {
 });
 
 test("Returns 0 if the input is 1", () => {
-  expect(iterateFibonacci(1)).toStrictEqual([0]);
+  expect(iterateFibonacciSequence(1)).toStrictEqual([0]);
 });
 
 test("Returns 0 and 1 if the input is 2", () => {
-  expect(iterateFibonacci(2)).toStrictEqual([0, 1]);
+  expect(iterateFibonacciSequence(2)).toStrictEqual([0, 1]);
 });
 
 test("Returns a Fibonacci sequence", () => {
-  expect(iterateFibonacci(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
+  expect(iterateFibonacciSequence(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
 });
 
 test("Recurses 0 if the input is 1", () => {
-  expect(recurseFibonacci(1)).toStrictEqual([0]);
+  expect(recurseFibonacciSequence(1)).toStrictEqual([0]);
 });
 
 test("Recurses a Fibonacci sequence", () => {
-  expect(recurseFibonacci(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
+  expect(recurseFibonacciSequence(8)).toStrictEqual([0, 1, 1, 2, 3, 5, 8, 13]);
 });
