@@ -20,4 +20,15 @@ function iterateFibonacci(sequenceSize) {
   return sequence;
 }
 
-export { findFibonacciTerm, iterateFibonacci };
+function recurseFibonacci(sequenceSize, number = 0, sequence = []) {
+  if (number === sequenceSize) {
+    return sequence;
+  }
+
+  const fibonacciTerm = findFibonacciTerm(number);
+  sequence.push(fibonacciTerm);
+
+  return recurseFibonacci(sequenceSize, number + 1, sequence);
+}
+
+export { findFibonacciTerm, iterateFibonacci, recurseFibonacci };
