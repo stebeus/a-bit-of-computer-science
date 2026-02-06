@@ -1,4 +1,5 @@
 import { expect, test } from "vitest";
+import { mergeSort } from "../merge-sort";
 
 test("Works with empty arrays", () => {
   expect(mergeSort([])).toStrictEqual([]);
