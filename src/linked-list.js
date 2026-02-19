@@ -11,14 +11,18 @@ class LinkedList {
     this.length = 0;
   }
 
-  append(value) {
-    const node = new Node(value);
-    this.length++;
-
+  addFirst(node) {
     if (!this.head) {
       this.head = node;
       return;
     }
+  }
+
+  append(value) {
+    const node = new Node(value);
+    this.length++;
+
+    this.addFirst(node);
 
     let current = this.head;
     while (current.next) current = current.next;
@@ -30,10 +34,7 @@ class LinkedList {
     const node = new Node(value);
     this.length++;
 
-    if (!this.head) {
-      this.head = node;
-      return;
-    }
+    this.addFirst(node);
 
     const current = this.head;
     this.head = node;
