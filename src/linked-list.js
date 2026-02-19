@@ -40,4 +40,8 @@ class LinkedList {
     this.head = node;
     this.head.next = current;
   }
+
+  getHead() {
+    return this.length ? this.head : undefined;
+  }
 }
