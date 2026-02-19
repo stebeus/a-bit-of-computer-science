@@ -69,4 +69,13 @@ class LinkedList {
 
     return current.value;
   }
+
+  pop() {
+    this.length--;
+
+    const popped = this.head;
+    this.head = this.head ? this.head.next : null;
+
+    return popped.value || undefined;
+  }
 }
