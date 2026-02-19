@@ -105,4 +105,18 @@ class LinkedList {
 
     return index;
   }
+
+  print() {
+    if (!this.length) return "";
+
+    let current = this.head;
+    let result = "";
+
+    while (current) {
+      result += `( ${current.value} ) -> `;
+      current = current.next;
+    }
+
+    return `${result} null`;
+  }
 }
