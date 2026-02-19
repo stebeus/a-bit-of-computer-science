@@ -12,17 +12,17 @@ class LinkedList {
   }
 
   addFirst(node) {
-    if (!this.head) {
-      this.head = node;
-      return;
-    }
+    this.head = node;
   }
 
   append(value) {
     const node = new Node(value);
     this.length++;
 
-    this.addFirst(node);
+    if (!this.head) {
+      this.addFirst(node);
+      return;
+    }
 
     let current = this.head;
     while (current.next) current = current.next;
@@ -34,7 +34,10 @@ class LinkedList {
     const node = new Node(value);
     this.length++;
 
-    this.addFirst(node);
+    if (!this.head) {
+      this.addFirst(node);
+      return;
+    }
 
     const current = this.head;
     this.head = node;
