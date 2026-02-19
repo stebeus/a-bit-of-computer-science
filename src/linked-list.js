@@ -45,7 +45,7 @@ class LinkedList {
   }
 
   getHead() {
-    return this.length ? this.head : undefined;
+    return this.length ? this.head.value : undefined;
   }
 
   getTail() {
@@ -54,7 +54,7 @@ class LinkedList {
     let current = this.head;
     while (current.next) current = current.next;
 
-    return current;
+    return current.value;
   }
 
   at(index) {
@@ -67,6 +67,6 @@ class LinkedList {
       current = current.next;
     }
 
-    return current;
+    return current.value;
   }
 }
