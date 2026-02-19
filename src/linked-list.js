@@ -25,4 +25,18 @@ class LinkedList {
 
     current.next = node;
   }
+
+  prepend(value) {
+    const node = new Node(value);
+    this.length++;
+
+    if (!this.head) {
+      this.head = node;
+      return;
+    }
+
+    const current = this.head;
+    this.head = node;
+    this.head.next = current;
+  }
 }
