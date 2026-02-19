@@ -47,4 +47,13 @@ class LinkedList {
   getHead() {
     return this.length ? this.head : undefined;
   }
+
+  getTail() {
+    if (!this.length) return undefined;
+
+    let current = this.head;
+    while (current.next) current = current.next;
+
+    return current;
+  }
 }
