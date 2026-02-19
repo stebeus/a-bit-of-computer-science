@@ -78,4 +78,13 @@ class LinkedList {
 
     return popped.value || undefined;
   }
+
+  contain(value) {
+    if (!this.length) return false;
+
+    let current = this.head;
+    while (current.next) current = current.next;
+
+    return current.value === value;
+  }
 }
