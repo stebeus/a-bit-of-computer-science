@@ -87,4 +87,22 @@ class LinkedList {
 
     return current.value === value;
   }
+
+  findIndexOf(value) {
+    let current = this.head;
+    let index = -1;
+    let currentIndex = 0;
+
+    while (current) {
+      if (current.value === value) {
+        index = currentIndex;
+        break;
+      }
+
+      current = current.next;
+      currentIndex++;
+    }
+
+    return index;
+  }
 }
