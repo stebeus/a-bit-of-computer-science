@@ -1,6 +1,6 @@
 # A bit of computer science
 
-Introductory data structures and algorithms assignments.
+Assignments from the Odin Project's introduction on data structures and algorithms.
 
 ## License
 
