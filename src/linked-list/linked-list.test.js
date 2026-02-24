@@ -61,5 +61,9 @@ describe("LinkedList search methods", () => {
     });
   });
 
-  describe("LinkedList.getTail", () => {});
+  describe("LinkedList.getTail", () => {
+    it("returns undefined if the list is empty", () => {
+      expect(list.getTail()).toBeUndefined();
+    });
+  });
 });
