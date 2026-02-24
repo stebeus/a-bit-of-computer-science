@@ -46,7 +46,11 @@ describe("LinkedList insertion", () => {
 });
 
 describe("LinkedList.pop", () => {
-  describe("When the list is empty", () => {});
+  describe("When the list is empty", () => {
+    it("returns undefined", () => {
+      expect(list.pop()).toBeUndefined();
+    });
+  });
 });
 
 describe("LinkedList search", () => {
