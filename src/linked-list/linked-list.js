@@ -11,7 +11,7 @@ class LinkedList {
     this.length = 0;
   }
 
-  addFirst(node) {
+  #addFirst(node) {
     this.head = node;
   }
 
@@ -21,7 +21,7 @@ class LinkedList {
     this.length++;
 
     if (!this.head) {
-      this.addFirst(node);
+      this.#addFirst(node);
       return;
     }
 
@@ -37,7 +37,7 @@ class LinkedList {
     this.length++;
 
     if (!this.head) {
-      this.addFirst(node);
+      this.#addFirst(node);
       return;
     }
 
