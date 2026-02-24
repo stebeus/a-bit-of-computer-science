@@ -85,6 +85,24 @@ class LinkedList {
     const currentNode = this.#traverse(this.head);
     return currentNode.value === value;
   }
+
+  findIndexOf(value) {
+    let currentNode = this.head;
+    let index = -1;
+    let currentIndex = 0;
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        index = currentIndex;
+        break;
+      }
+
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+
+    return index;
+  }
 }
 
 export { LinkedList, Node };
