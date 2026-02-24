@@ -26,4 +26,15 @@ describe("LinkedList.append", () => {
   });
 });
 
-describe("LinkedList.prepend", () => {});
+describe("LinkedList.prepend", () => {
+  it("increases linked list length by one", () => {
+    // Arrange
+    const list = new LinkedList();
+
+    // Act
+    list.prepend("foo");
+
+    // Assert
+    expect(list).toHaveLength(1);
+  });
+});
