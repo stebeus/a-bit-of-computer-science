@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { LinkedList } from "./linked-list";
+import { LinkedList, Node } from "./linked-list";
 
 let list;
 
@@ -15,7 +15,7 @@ describe("LinkedList.append", () => {
 
   it('has "bar" as the last list item', () => {
     // Arrange
-    list.append("foo");
+    list.head = new Node("foo");
 
     // Act
     list.append("bar");
@@ -33,7 +33,7 @@ describe("LinkedList.prepend", () => {
 
   it('has "bar" as the first list item', () => {
     // Arrange
-    list.append("foo");
+    list.head = new Node("foo");
 
     // Act
     list.prepend("bar");
@@ -52,8 +52,6 @@ describe("LinkedList search methods", () => {
     it('returns "foo" as the first list item', () => {
       // Arrange
       list.append("foo");
-
-      // Act
       list.append("bar");
 
       // Assert
@@ -69,8 +67,6 @@ describe("LinkedList search methods", () => {
     it('returns "bar" as the last list item', () => {
       // Arrange
       list.append("foo");
-
-      // Act
       list.append("bar");
 
       // Assert
@@ -81,8 +77,8 @@ describe("LinkedList search methods", () => {
   describe("LinkedList.at", () => {
     it("returns undefined if a given index has no item", () => {
       // Arrange
-      list.append("foo");
-      list.append("bar");
+      list.head = new Node("foo");
+      list.head.next = new Node("bar");
 
       expect(list.at(2)).toBeUndefined();
     });
