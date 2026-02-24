@@ -51,4 +51,6 @@ describe("LinkedList.prepend", () => {
   });
 });
 
-describe("LinkedList search methods", () => {});
+describe("LinkedList search methods", () => {
+  describe("LinkedList.getHead", () => {});
+});
