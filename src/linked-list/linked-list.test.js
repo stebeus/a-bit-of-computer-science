@@ -52,5 +52,10 @@ describe("LinkedList.prepend", () => {
 });
 
 describe("LinkedList search methods", () => {
-  describe("LinkedList.getHead", () => {});
+  describe("LinkedList.getHead", () => {
+    it("returns undefined if the list is empty", () => {
+      const list = new LinkedList();
+      expect(list.getHead()).toBeUndefined();
+    });
+  });
 });
