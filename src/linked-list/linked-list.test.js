@@ -7,39 +7,41 @@ beforeEach(() => {
   list = new LinkedList();
 });
 
-describe("LinkedList.append", () => {
-  it("increases linked list length by one", () => {
-    list.append("foo");
-    expect(list).toHaveLength(1);
+describe("LinkedList insertion", () => {
+  describe("LinkedList.append", () => {
+    it("increases linked list length by one", () => {
+      list.append("foo");
+      expect(list).toHaveLength(1);
+    });
+
+    it('has "bar" as the last list item', () => {
+      // Arrange
+      list.head = new Node("foo");
+
+      // Act
+      list.append("bar");
+
+      // Assert
+      expect(list.head.next.value).toBe("bar");
+    });
   });
 
-  it('has "bar" as the last list item', () => {
-    // Arrange
-    list.head = new Node("foo");
+  describe("LinkedList.prepend", () => {
+    it("increases linked list length by one", () => {
+      list.prepend("foo");
+      expect(list).toHaveLength(1);
+    });
 
-    // Act
-    list.append("bar");
+    it('has "bar" as the first list item', () => {
+      // Arrange
+      list.head = new Node("foo");
 
-    // Assert
-    expect(list.head.next.value).toBe("bar");
-  });
-});
+      // Act
+      list.prepend("bar");
 
-describe("LinkedList.prepend", () => {
-  it("increases linked list length by one", () => {
-    list.prepend("foo");
-    expect(list).toHaveLength(1);
-  });
-
-  it('has "bar" as the first list item', () => {
-    // Arrange
-    list.head = new Node("foo");
-
-    // Act
-    list.prepend("bar");
-
-    // Assert
-    expect(list.head.value).toBe("bar");
+      // Assert
+      expect(list.head.value).toBe("bar");
+    });
   });
 });
 
