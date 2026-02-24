@@ -60,4 +60,6 @@ describe("LinkedList search methods", () => {
       expect(list.getHead()).toBe("foo");
     });
   });
+
+  describe("LinkedList.getTail", () => {});
 });
