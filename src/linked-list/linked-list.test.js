@@ -50,6 +50,11 @@ describe("LinkedList.pop", () => {
     it("returns undefined", () => {
       expect(list.pop()).toBeUndefined();
     });
+
+    it("does not decrease list length", () => {
+      list.pop();
+      expect(list).toHaveLength(0);
+    });
   });
 });
 
