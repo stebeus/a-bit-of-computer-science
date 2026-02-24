@@ -15,6 +15,11 @@ class LinkedList {
     this.head = node;
   }
 
+  #traverse(currentNode) {
+    while (currentNode.next) currentNode = currentNode.next;
+    return currentNode;
+  }
+
   append(value) {
     const node = new Node(value);
 
@@ -25,9 +30,7 @@ class LinkedList {
       return;
     }
 
-    let currentNode = this.head;
-    while (currentNode.next) currentNode = currentNode.next;
-
+    const currentNode = this.#traverse(this.head);
     currentNode.next = node;
   }
 
@@ -64,8 +67,7 @@ class LinkedList {
   getTail() {
     if (!this.length) return undefined;
 
-    let currentNode = this.head;
-    while (currentNode.next) currentNode = currentNode.next;
+    const currentNode = this.#traverse(this.head);
 
     return currentNode.value;
   }
@@ -80,9 +82,7 @@ class LinkedList {
   }
 
   contains(value) {
-    let currentNode = this.head;
-    while (currentNode.next) currentNode = currentNode.next;
-
+    const currentNode = this.#traverse(this.head);
     return currentNode.value === value;
   }
 }
