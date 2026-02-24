@@ -103,6 +103,20 @@ class LinkedList {
 
     return index;
   }
+
+  print() {
+    let output = "";
+    let currentNode = this.head;
+
+    if (!this.length) return output;
+
+    while (currentNode) {
+      output += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.next;
+    }
+
+    return `${output}null`;
+  }
 }
 
 export { LinkedList, Node };
