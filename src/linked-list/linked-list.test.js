@@ -183,6 +183,10 @@ describe("LinkedList search", () => {
 });
 
 describe("LinkedList.print", () => {
+  it("prints an empty string when the list is empty", () => {
+    expect(list.print()).toBe("");
+  });
+
   it("prints values that points to the next list item", () => {
     // Arrange
     list.append("foo");
