@@ -25,3 +25,5 @@ describe("LinkedList.append", () => {
     expect(list.head.next.value).toBe("bar");
   });
 });
+
+describe("LinkedList.prepend", () => {});
