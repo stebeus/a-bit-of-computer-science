@@ -160,5 +160,14 @@ describe("LinkedList search", () => {
       // Assert
       expect(list.findIndexOf("baz")).toBe(-1);
     });
+
+    it("returns the index of the value in the list", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+
+      // Assert
+      expect(list.findIndexOf("bar")).toBe(1);
+    });
   });
 });
