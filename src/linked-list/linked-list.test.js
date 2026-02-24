@@ -65,6 +65,19 @@ describe("LinkedList.pop", () => {
     // Assert
     expect(list.pop()).toBe("foo");
   });
+
+  it("decreases the list length by one", () => {
+    // Arrange
+    list.append("foo");
+    list.append("bar");
+    list.append("baz");
+
+    // Act
+    list.pop();
+
+    // Assert
+    expect(list).toHaveLength(2);
+  });
 });
 
 describe("LinkedList search", () => {
