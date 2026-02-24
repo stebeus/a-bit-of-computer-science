@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "test": "vitest"
+  },
   "packageManager": "pnpm@10.29.2",
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
