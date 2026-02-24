@@ -56,6 +56,15 @@ describe("LinkedList.pop", () => {
       expect(list).toHaveLength(0);
     });
   });
+
+  it("returns the first removed list item", () => {
+    // Arrange
+    list.append("foo");
+    list.append("bar");
+
+    // Assert
+    expect(list.pop()).toBe("foo");
+  });
 });
 
 describe("LinkedList search", () => {
