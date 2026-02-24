@@ -45,6 +45,8 @@ describe("LinkedList insertion", () => {
   });
 });
 
+describe("LinkedList.pop", () => {});
+
 describe("LinkedList search", () => {
   describe("LinkedList.getHead", () => {
     it("returns undefined if the list is empty", () => {
