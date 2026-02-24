@@ -130,4 +130,6 @@ describe("LinkedList search", () => {
       expect(list.at(2)).toBe("baz");
     });
   });
+
+  describe("LinkedList.contains", () => {});
 });
