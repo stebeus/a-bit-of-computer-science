@@ -140,5 +140,14 @@ describe("LinkedList search", () => {
       // Assert
       expect(list.contains("baz")).toBeFalsy();
     });
+
+    it("confirms that the specified list item exists", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+
+      // Assert
+      expect(list.contains("bar")).toBeTruthy();
+    });
   });
 });
