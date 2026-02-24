@@ -151,5 +151,14 @@ describe("LinkedList search", () => {
     });
   });
 
-  describe("LinkedList.findIndexOf", () => {});
+  describe("LinkedList.findIndexOf", () => {
+    it("returns -1 if the value is not found in the list", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+
+      // Assert
+      expect(list.findIndexOf("baz")).toBe(-1);
+    });
+  });
 });
