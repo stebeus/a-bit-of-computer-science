@@ -45,6 +45,10 @@ class LinkedList {
     this.head = node;
     this.head.next = previousNode;
   }
+
+  getHead() {
+    return this.length ? this.head.value : undefined;
+  }
 }
 
 export { LinkedList };
