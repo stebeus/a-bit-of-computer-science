@@ -131,5 +131,14 @@ describe("LinkedList search", () => {
     });
   });
 
-  describe("LinkedList.contains", () => {});
+  describe("LinkedList.contains", () => {
+    it("confirms that the specified list item does not exist", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+
+      // Assert
+      expect(list.contains("baz")).toBeFalsy();
+    });
+  });
 });
