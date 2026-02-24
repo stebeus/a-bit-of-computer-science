@@ -86,5 +86,15 @@ describe("LinkedList search methods", () => {
 
       expect(list.at(2)).toBeUndefined();
     });
+
+    it('returns "baz" if the given index is 2', () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+      list.append("baz");
+
+      // Assert
+      expect(list.at(2)).toBe("baz");
+    });
   });
 });
