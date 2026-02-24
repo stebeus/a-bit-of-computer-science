@@ -181,3 +181,5 @@ describe("LinkedList search", () => {
     });
   });
 });
+
+describe("LinkedList.print", () => {});
