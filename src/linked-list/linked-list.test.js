@@ -57,5 +57,17 @@ describe("LinkedList search methods", () => {
       const list = new LinkedList();
       expect(list.getHead()).toBeUndefined();
     });
+
+    it('returns "foo" as the first list item', () => {
+      // Arrange
+      const list = new LinkedList();
+      list.append("foo");
+
+      // Act
+      list.append("bar");
+
+      // Assert
+      expect(list.getHead()).toBe("foo");
+    });
   });
 });
