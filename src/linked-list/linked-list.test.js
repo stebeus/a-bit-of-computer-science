@@ -65,5 +65,16 @@ describe("LinkedList search methods", () => {
     it("returns undefined if the list is empty", () => {
       expect(list.getTail()).toBeUndefined();
     });
+
+    it('returns "bar" as the last list item', () => {
+      // Arrange
+      list.append("foo");
+
+      // Act
+      list.append("bar");
+
+      // Assert
+      expect(list.getTail()).toBe("bar");
+    });
   });
 });
