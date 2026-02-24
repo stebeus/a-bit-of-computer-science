@@ -58,6 +58,15 @@ class LinkedList {
 
     return currentNode.value;
   }
+
+  at(index) {
+    if (index > this.length) return undefined;
+
+    let currentNode = this.head;
+    for (let node = 0; node < index; node++) currentNode = currentNode.next;
+
+    return currentNode.value;
+  }
 }
 
 export { LinkedList, Node };
