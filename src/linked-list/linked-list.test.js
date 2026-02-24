@@ -182,4 +182,14 @@ describe("LinkedList search", () => {
   });
 });
 
-describe("LinkedList.print", () => {});
+describe("LinkedList.print", () => {
+  it("prints values that points to the next list item", () => {
+    // Arrange
+    list.append("foo");
+    list.append("bar");
+    list.append("baz");
+
+    // Assert
+    expect(list.print()).toBe("( foo ) -> ( bar ) -> ( baz ) -> null");
+  });
+});
