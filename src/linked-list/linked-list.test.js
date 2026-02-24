@@ -77,4 +77,6 @@ describe("LinkedList search methods", () => {
       expect(list.getTail()).toBe("bar");
     });
   });
+
+  describe("LinkedList.at", () => {});
 });
