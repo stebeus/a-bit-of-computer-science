@@ -78,5 +78,13 @@ describe("LinkedList search methods", () => {
     });
   });
 
-  describe("LinkedList.at", () => {});
+  describe("LinkedList.at", () => {
+    it("returns undefined if a given index has no item", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+
+      expect(list.at(2)).toBeUndefined();
+    });
+  });
 });
