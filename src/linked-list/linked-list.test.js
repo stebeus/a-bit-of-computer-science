@@ -50,3 +50,5 @@ describe("LinkedList.prepend", () => {
     expect(list.head.value).toBe("bar");
   });
 });
+
+describe("LinkedList search methods", () => {});
