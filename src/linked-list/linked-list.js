@@ -46,6 +46,17 @@ class LinkedList {
     this.head.next = previousNode;
   }
 
+  pop() {
+    if (!this.length) return undefined;
+
+    this.length--;
+
+    const poppedNode = this.head;
+    this.head = this.head ? this.head.next : null;
+
+    return poppedNode.value;
+  }
+
   getHead() {
     return this.length ? this.head.value : undefined;
   }
