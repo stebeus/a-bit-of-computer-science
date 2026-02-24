@@ -37,4 +37,16 @@ describe("LinkedList.prepend", () => {
     // Assert
     expect(list).toHaveLength(1);
   });
+
+  it('has "bar" as the first list item', () => {
+    // Arrange
+    const list = new LinkedList();
+    list.append("foo");
+
+    // Act
+    list.prepend("bar");
+
+    // Assert
+    expect(list.head.value).toBe("bar");
+  });
 });
