@@ -60,4 +60,4 @@ class LinkedList {
   }
 }
 
-export { LinkedList };
+export { LinkedList, Node };
