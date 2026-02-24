@@ -150,4 +150,6 @@ describe("LinkedList search", () => {
       expect(list.contains("bar")).toBeTruthy();
     });
   });
+
+  describe("LinkedList.findIndexOf", () => {});
 });
