@@ -12,4 +12,16 @@ describe("LinkedList.append", () => {
     // Assert
     expect(list).toHaveLength(1);
   });
+
+  it('has "bar" as the last list item', () => {
+    // Arrange
+    const list = new LinkedList();
+    list.append("foo");
+
+    // Act
+    list.append("bar");
+
+    // Assert
+    expect(list.head.next.value).toBe("bar");
+  });
 });
