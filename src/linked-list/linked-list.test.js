@@ -169,5 +169,15 @@ describe("LinkedList search", () => {
       // Assert
       expect(list.findIndexOf("bar")).toBe(1);
     });
+
+    it("returns the index of the first duplicated value", () => {
+      // Arrange
+      list.append("foo");
+      list.append("bar");
+      list.append("bar");
+
+      // Assert
+      expect(list.findIndexOf("bar")).toBe(1);
+    });
   });
 });
