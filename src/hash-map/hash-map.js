@@ -15,6 +15,7 @@ class HashMap {
     let hashCode = 0;
 
     const primeNumber = 31;
+
     for (let i = 0; i < key.length; i++) {
       const charCode = key.charCodeAt(i);
       hashCode = (primeNumber * hashCode + charCode) % this.#capacity;
