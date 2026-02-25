@@ -39,6 +39,13 @@ class HashMap {
     this.buckets[hashCode] = new LinkedList();
   }
 
+  clear() {
+    this.buckets = Array.from(
+      { length: this.#capacity },
+      () => new LinkedList(),
+    );
+  }
+
   get(key) {
     const hashCode = this.#hash(key);
 
@@ -138,3 +145,7 @@ console.log(hashMap.has("Beans"));
 console.log(hashMap.keys());
 console.log(hashMap.values());
 console.log(hashMap.entries());
+
+console.log(hashMap.clear());
+hashMap.set("JavaScript", NaN);
+console.log(hashMap.buckets);
