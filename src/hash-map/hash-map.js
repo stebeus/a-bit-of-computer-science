@@ -29,6 +29,35 @@ class HashMap {
     const item = { key: hashCode, value };
     this.buckets[hashCode].append(item);
   }
+
+  get(key) {
+    const hashCode = this.#hash(key);
+
+    function isKey({ head }) {
+      if (!head) return;
+
+      const data = head.data;
+      return data.key === hashCode;
+    }
+
+    const bucket = this.buckets.find(isKey);
+    if (!bucket) return null;
+
+    const value = bucket.head.data.value;
+    return value;
+  }
 }
 
 const hashMap = new HashMap();
+
+hashMap.set(
+  "The Odin Project",
+  "Free and open source full-stack web development curriculum.",
+);
+hashMap.set(1, "Number one");
+hashMap.set("JavaScript", NaN);
+hashMap.set("Beans", "Food");
+hashMap.set("sneBa", "Copy of beans");
+hashMap.set(null, false);
+
+console.log(hashMap.get("The Odin Project"));
