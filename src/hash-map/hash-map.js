@@ -46,6 +46,20 @@ class HashMap {
     const value = bucket.head.data.value;
     return value;
   }
+
+  has(key) {
+    const hashCode = this.#hash(key);
+
+    function isKey({ head }) {
+      if (!head) return;
+
+      const data = head.data;
+      return data.key === hashCode;
+    }
+
+    const bucket = this.buckets.some(isKey);
+    return bucket;
+  }
 }
 
 const hashMap = new HashMap();
@@ -60,4 +74,4 @@ hashMap.set("Beans", "Food");
 hashMap.set("sneBa", "Copy of beans");
 
 console.log(hashMap.get("The Odin Project"));
-console.log(hashMap.buckets);
+console.log(hashMap.has("Beans"));
