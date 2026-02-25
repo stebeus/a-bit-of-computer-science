@@ -90,6 +90,24 @@ class HashMap {
     const bucket = this.buckets.filter(isKey);
     return bucket.map(getValues);
   }
+
+  entries() {
+    function isKey({ head }) {
+      if (!head) return;
+
+      const data = head.data;
+      return data.key;
+    }
+
+    const getEntries = ({
+      head: {
+        data: { key, value },
+      },
+    }) => [key, value];
+
+    const bucket = this.buckets.filter(isKey);
+    return bucket.map(getEntries);
+  }
 }
 
 const hashMap = new HashMap();
@@ -108,3 +126,4 @@ console.log(hashMap.has("Beans"));
 console.log(hashMap.length);
 console.log(hashMap.keys());
 console.log(hashMap.values());
+console.log(hashMap.entries());
