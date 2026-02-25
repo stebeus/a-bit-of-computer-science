@@ -1,6 +1,6 @@
 class Node {
-  constructor(value) {
-    this.value = value;
+  constructor(data) {
+    this.data = data;
     this.next = null;
   }
 }
@@ -57,11 +57,11 @@ class LinkedList {
     const poppedNode = this.head;
     this.head = this.head ? this.head.next : null;
 
-    return poppedNode.value;
+    return poppedNode.data;
   }
 
   getHead() {
-    return this.length ? this.head.value : undefined;
+    return this.length ? this.head.data : undefined;
   }
 
   getTail() {
@@ -69,7 +69,7 @@ class LinkedList {
 
     const currentNode = this.#traverse(this.head);
 
-    return currentNode.value;
+    return currentNode.data;
   }
 
   at(index) {
@@ -78,12 +78,12 @@ class LinkedList {
     let currentNode = this.head;
     for (let node = 0; node < index; node++) currentNode = currentNode.next;
 
-    return currentNode.value;
+    return currentNode.data;
   }
 
   contains(value) {
     const currentNode = this.#traverse(this.head);
-    return currentNode.value === value;
+    return currentNode.data === value;
   }
 
   findIndexOf(value) {
@@ -92,7 +92,7 @@ class LinkedList {
     let currentIndex = 0;
 
     while (currentNode) {
-      if (currentNode.value === value) {
+      if (currentNode.data === value) {
         index = currentIndex;
         break;
       }
@@ -111,7 +111,7 @@ class LinkedList {
     if (!this.length) return output;
 
     while (currentNode) {
-      output += `( ${currentNode.value} ) -> `;
+      output += `( ${currentNode.data} ) -> `;
       currentNode = currentNode.next;
     }
 

@@ -22,7 +22,7 @@ describe("LinkedList insertion", () => {
       list.append("bar");
 
       // Assert
-      expect(list.head.next.value).toBe("bar");
+      expect(list.head.next.data).toBe("bar");
     });
   });
 
@@ -40,7 +40,7 @@ describe("LinkedList insertion", () => {
       list.prepend("bar");
 
       // Assert
-      expect(list.head.value).toBe("bar");
+      expect(list.head.data).toBe("bar");
     });
   });
 });
