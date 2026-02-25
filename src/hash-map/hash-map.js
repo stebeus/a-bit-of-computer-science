@@ -9,6 +9,7 @@ class HashMap {
       { length: this.#capacity },
       () => new LinkedList(),
     );
+    this.length = 0;
   }
 
   #hash(key) {
@@ -27,7 +28,9 @@ class HashMap {
   set(key, value) {
     const hashCode = this.#hash(key);
     const item = { key: hashCode, value };
+
     this.buckets[hashCode].append(item);
+    this.length++;
   }
 
   get(key) {
@@ -75,3 +78,4 @@ hashMap.set("sneBa", "Copy of beans");
 
 console.log(hashMap.get("The Odin Project"));
 console.log(hashMap.has("Beans"));
+console.log(hashMap.length);
