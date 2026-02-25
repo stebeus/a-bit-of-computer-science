@@ -23,6 +23,12 @@ class HashMap {
 
     return hashCode;
   }
+
+  set(key, value) {
+    const hashCode = this.#hash(key);
+    const item = { key: hashCode, value };
+    this.buckets[hashCode].append(item);
+  }
 }
 
 const hashMap = new HashMap();
