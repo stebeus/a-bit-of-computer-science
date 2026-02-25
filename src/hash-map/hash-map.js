@@ -58,6 +58,6 @@ hashMap.set(1, "Number one");
 hashMap.set("JavaScript", NaN);
 hashMap.set("Beans", "Food");
 hashMap.set("sneBa", "Copy of beans");
-hashMap.set(null, false);
 
 console.log(hashMap.get("The Odin Project"));
+console.log(hashMap.buckets);
