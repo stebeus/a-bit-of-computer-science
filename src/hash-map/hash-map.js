@@ -76,6 +76,20 @@ class HashMap {
     const bucket = this.buckets.filter(isKey);
     return bucket.map(getKeys);
   }
+
+  values() {
+    function isKey({ head }) {
+      if (!head) return;
+
+      const data = head.data;
+      return data.key;
+    }
+
+    const getValues = ({ head }) => head.data.value;
+
+    const bucket = this.buckets.filter(isKey);
+    return bucket.map(getValues);
+  }
 }
 
 const hashMap = new HashMap();
@@ -93,3 +107,4 @@ console.log(hashMap.get("The Odin Project"));
 console.log(hashMap.has("Beans"));
 console.log(hashMap.length);
 console.log(hashMap.keys());
+console.log(hashMap.values());
