@@ -33,6 +33,12 @@ class HashMap {
     this.length++;
   }
 
+  remove(key) {
+    const hashCode = this.#hash(key);
+
+    this.buckets[hashCode] = new LinkedList();
+  }
+
   get(key) {
     const hashCode = this.#hash(key);
 
@@ -116,14 +122,19 @@ hashMap.set(
   "The Odin Project",
   "Free and open source full-stack web development curriculum.",
 );
-hashMap.set(1, "Number one");
-hashMap.set("JavaScript", NaN);
+
+hashMap.set("1", "Number one");
 hashMap.set("Beans", "Food");
 hashMap.set("sneBa", "Copy of beans");
+hashMap.set("JavaScript", NaN);
+
+hashMap.remove("JavaScript");
+
+console.log(hashMap.buckets);
+console.log(hashMap.length);
 
 console.log(hashMap.get("The Odin Project"));
 console.log(hashMap.has("Beans"));
-console.log(hashMap.length);
 console.log(hashMap.keys());
 console.log(hashMap.values());
 console.log(hashMap.entries());
