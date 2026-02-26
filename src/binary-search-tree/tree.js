@@ -1,4 +1,5 @@
 import { Node } from './node.js';
+import { sortInAscendingOrder } from './utils.js';
 
 class Tree {
   #convertToBalancedSearchTree(array, start, end) {
@@ -15,8 +16,6 @@ class Tree {
   }
 
   #buildTree(array) {
-    const sortInAscendingOrder = (a, b) => a - b;
-
     const uniqueArray = [...new Set(array)];
     const sortedArray = uniqueArray.sort(sortInAscendingOrder);
 
