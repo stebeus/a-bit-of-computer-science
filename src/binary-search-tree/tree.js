@@ -30,5 +30,5 @@ class Tree {
   }
 }
 
-const array = [5, 1, 3, 2, 4];
+const array = [5, 5, 1, 3, 2, 4];
 const tree = new Tree(array);
