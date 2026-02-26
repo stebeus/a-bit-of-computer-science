@@ -25,6 +25,6 @@ class Tree {
   }
 
   constructor(array) {
-    this.root = array;
+    this.root = this.#buildTree(array);
   }
 }
