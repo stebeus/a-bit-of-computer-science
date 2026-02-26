@@ -1,5 +1,5 @@
 import { Node } from './node.js';
-import { sortInAscendingOrder } from './utils.js';
+import { prettyPrint, sortInAscendingOrder } from './utils.js';
 
 class Tree {
   #convertToBalancedSearchTree(array, start, end) {
@@ -32,3 +32,5 @@ class Tree {
 
 const array = [5, 5, 1, 3, 2, 4];
 const tree = new Tree(array);
+
+prettyPrint(tree.root);
