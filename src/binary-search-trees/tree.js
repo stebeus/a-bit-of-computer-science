@@ -24,9 +24,23 @@ class Tree {
   constructor(array) {
     this.root = this.#buildTree(array);
   }
+
+  includes(value) {
+    let current = this.root;
+
+    while (current) {
+      if (current.data === value) return true;
+
+      if (value < current.data) current = current.left;
+      else current = current.right;
+    }
+
+    return false;
+  }
 }
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const tree = new Tree(array);
 
 prettyPrint(tree);
+console.log(tree.includes(3));
