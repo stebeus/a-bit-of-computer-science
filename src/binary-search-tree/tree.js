@@ -28,3 +28,5 @@ class Tree {
     this.root = this.#buildTree(array);
   }
 }
+
+const array = [5, 1, 3, 2, 4];
