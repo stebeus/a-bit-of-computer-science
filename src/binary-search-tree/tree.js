@@ -9,8 +9,8 @@ class Tree {
     const middle = start + half;
     const root = new Node(array[middle]);
 
-    root.left = this.#convertToBalancedSearchTree(middle, start, middle - 1);
-    root.right = this.#convertToBalancedSearchTree(middle, middle + 1, end);
+    root.left = this.#convertToBalancedSearchTree(array, start, middle - 1);
+    root.right = this.#convertToBalancedSearchTree(array, middle + 1, end);
 
     return root;
   }
