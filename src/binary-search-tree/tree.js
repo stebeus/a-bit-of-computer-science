@@ -16,7 +16,9 @@ class Tree {
 
   #buildTree(array) {
     const sortInAscendingOrder = (a, b) => a - b;
-    const sortedArray = array.sort(sortInAscendingOrder);
+
+    const uniqueArray = [...new Set(array)];
+    const sortedArray = uniqueArray.sort(sortInAscendingOrder);
 
     const start = 0;
     const end = array.length;
