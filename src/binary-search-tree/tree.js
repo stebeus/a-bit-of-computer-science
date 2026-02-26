@@ -20,7 +20,7 @@ class Tree {
     const sortedArray = uniqueArray.sort(sortInAscendingOrder);
 
     const start = 0;
-    const end = sortedArray.length;
+    const end = uniqueArray.length - 1;
 
     return this.#convertToBalancedSearchTree(sortedArray, start, end);
   }
