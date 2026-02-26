@@ -30,7 +30,7 @@ class Tree {
   }
 }
 
-const array = [5, 5, 1, 3, 2, 4];
+const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
 const tree = new Tree(array);
 
 prettyPrint(tree.root);
