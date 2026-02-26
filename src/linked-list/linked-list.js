@@ -105,7 +105,7 @@ class LinkedList {
   }
 
   print() {
-    let output = "";
+    let output = '';
     let currentNode = this.head;
 
     if (!this.length) return output;

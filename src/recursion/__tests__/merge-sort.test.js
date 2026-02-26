@@ -1,18 +1,18 @@
-import { expect, test } from "vitest";
-import { mergeSort } from "../merge-sort";
+import { expect, test } from 'vitest';
+import { mergeSort } from '../merge-sort.js';
 
-test("Works with empty arrays", () => {
+test('Works with empty arrays', () => {
   expect(mergeSort([])).toStrictEqual([]);
 });
 
-test("Works with single item arrays", () => {
+test('Works with single item arrays', () => {
   expect(mergeSort([73])).toStrictEqual([73]);
 });
 
-test("Works with even arrays", () => {
+test('Works with even arrays', () => {
   expect(mergeSort([105, 79, 100, 110])).toStrictEqual([79, 100, 105, 110]);
 });
 
-test("Works with odd arrays", () => {
+test('Works with odd arrays', () => {
   expect(mergeSort([5, 3, 1, 4, 2])).toStrictEqual([1, 2, 3, 4, 5]);
 });

@@ -1,5 +1,7 @@
-import { prettyPrint } from "./helpers.js";
-import { Node } from "./node.js";
+import { prettyPrint } from './helpers.js';
+import { Node } from './node.js';
+
+function buildTree(array) {}
 
 class Tree {
   constructor(array) {
