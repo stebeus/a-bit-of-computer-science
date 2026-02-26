@@ -14,6 +14,16 @@ class Tree {
     return root;
   }
 
+  #buildTree(array) {
+    const sortInAscendingOrder = (a, b) => a - b;
+    const sortedArray = array.sort(sortInAscendingOrder);
+
+    const start = 0;
+    const end = array.length;
+
+    return this.#convertToBalancedSearchTree(sortedArray, start, end);
+  }
+
   constructor(array) {
     this.root = array;
   }
