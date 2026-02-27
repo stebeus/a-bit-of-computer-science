@@ -88,16 +88,16 @@ class Tree {
     return currentNode;
   }
 
-  forEach(callback, currentNode) {
+  inOrderForEach(callback, currentNode = this.root) {
     if (!callback) {
       throw new Error('A callback function is required');
     }
 
     if (currentNode === null) return;
 
-    this.forEach(callback, currentNode.left);
+    this.inOrderForEach(callback, currentNode.left);
     callback(currentNode.data);
-    this.forEach(callback, currentNode.right);
+    this.inOrderForEach(callback, currentNode.right);
   }
 
   height(currentNode = this.root) {
@@ -121,6 +121,15 @@ class Tree {
 
     return isLeftBranchBalanced && isRightBranchBalanced;
   }
+
+  rebalance() {
+    const values = [];
+    const orderValues = (value) => values.push(value);
+
+    this.inOrderForEach(orderValues);
+
+    this.root = this.#buildTree(values);
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
@@ -130,5 +139,7 @@ tree.insert(-100);
 tree.delete(8);
 
 console.log(tree.height());
-console.log(tree.isBalanced(tree.root));
+console.log(tree.isBalanced());
+console.log(tree.rebalance());
+console.log(tree.isBalanced());
 prettyPrint(tree.root);
