@@ -99,6 +99,16 @@ class Tree {
     callback(currentNode.data);
     this.forEach(callback, currentNode.right);
   }
+
+  height() {
+    if (currentNode === null) return -1;
+
+    const leftHeight = this.height(currentNode.left);
+    const rightHeight = this.height(currentNode.right);
+
+    const totalHeight = Math.max(leftHeight, rightHeight) + 1;
+    return totalHeight;
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
@@ -107,4 +117,5 @@ const tree = new Tree(array);
 tree.insert(-100);
 tree.delete(8);
 
+console.log(tree.height());
 prettyPrint(tree.root);
