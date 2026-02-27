@@ -44,9 +44,23 @@ class Tree {
 
     return false;
   }
+
+  insert(value, currentNode = this.root) {
+    if (currentNode === null) return new Node(value);
+
+    if (value < currentNode.data) {
+      currentNode.left = this.insert(value, currentNode.left);
+    } else {
+      currentNode.right = this.insert(value, currentNode.right);
+    }
+
+    return currentNode;
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
 const tree = new Tree(array);
+
+tree.insert(-100);
 
 prettyPrint(tree.root);
