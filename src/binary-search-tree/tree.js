@@ -28,6 +28,22 @@ class Tree {
   constructor(array) {
     this.root = this.#buildTree(array);
   }
+
+  includes(value) {
+    let currentNode = this.root;
+
+    while (currentNode) {
+      if (currentNode.data === value) return true;
+
+      if (value < currentNode.data) {
+        currentNode = currentNode.left;
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+
+    return false;
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
