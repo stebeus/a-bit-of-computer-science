@@ -56,11 +56,43 @@ class Tree {
 
     return currentNode;
   }
+
+  #getSuccessor(currentNode) {
+    currentNode = currentNode.right;
+
+    while (currentNode !== null && currentNode.left !== null) {
+      currentNode = currentNode.left;
+    }
+
+    return currentNode;
+  }
+
+  delete(value, currentNode = this.root) {
+    if (currentNode === null) return currentNode;
+
+    if (currentNode.data > value) {
+      currentNode.left = this.delete(value, currentNode.left);
+    } else if (currentNode.data < value) {
+      currentNode.right = this.delete(value, currentNode.right);
+    } else {
+      // Node with 0 or 1 child
+      if (currentNode.left === null) return currentNode.right;
+      if (currentNode.right === null) return currentNode.left;
+
+      // Node with 2 children
+      const successor = this.#getSuccessor(currentNode);
+
+      currentNode.data = successor.data;
+      currentNode.right = this.delete(successor.data, currentNode.right);
+    }
+    return currentNode;
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
 const tree = new Tree(array);
 
 tree.insert(-100);
+tree.delete(8);
 
 prettyPrint(tree.root);
