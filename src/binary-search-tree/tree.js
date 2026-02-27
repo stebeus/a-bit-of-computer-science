@@ -100,14 +100,26 @@ class Tree {
     this.forEach(callback, currentNode.right);
   }
 
-  height() {
-    if (currentNode === null) return -1;
+  height(currentNode = this.root) {
+    if (currentNode === null) return 0;
 
     const leftHeight = this.height(currentNode.left);
     const rightHeight = this.height(currentNode.right);
 
+    const heightDifference = Math.abs(leftHeight - rightHeight);
     const totalHeight = Math.max(leftHeight, rightHeight) + 1;
-    return totalHeight;
+
+    return heightDifference > 1 ? -1 : totalHeight;
+  }
+
+  isBalanced(currentNode = this.root) {
+    if (currentNode === null) return true;
+    if (this.height(currentNode) === -1) return false;
+
+    const isLeftBranchBalanced = this.isBalanced(currentNode.left);
+    const isRightBranchBalanced = this.isBalanced(currentNode.right);
+
+    return isLeftBranchBalanced && isRightBranchBalanced;
   }
 }
 
@@ -118,4 +130,5 @@ tree.insert(-100);
 tree.delete(8);
 
 console.log(tree.height());
+console.log(tree.isBalanced(tree.root));
 prettyPrint(tree.root);
