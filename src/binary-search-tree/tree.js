@@ -87,6 +87,18 @@ class Tree {
     }
     return currentNode;
   }
+
+  forEach(callback, currentNode) {
+    if (!callback) {
+      throw new Error('A callback function is required');
+    }
+
+    if (currentNode === null) return;
+
+    this.forEach(callback, currentNode.left);
+    callback(currentNode.data);
+    this.forEach(callback, currentNode.right);
+  }
 }
 
 const array = [5, 5, 1, 3, 2, 4, 9, 0, 7, 8];
