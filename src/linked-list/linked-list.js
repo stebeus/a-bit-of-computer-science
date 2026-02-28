@@ -14,9 +14,7 @@ class LinkedList {
       return;
     }
 
-    let current = this.head;
-    while (current.next) current = current.next;
-
+    const current = this.#traverse(this.head);
     current.next = node;
   }
 
@@ -42,14 +40,17 @@ class LinkedList {
   getTail() {
     if (this.length === 0) return undefined;
 
-    let current = this.head;
-    while (current.next) current = current.next;
-
+    const current = this.#traverse(this.head);
     return current.data;
   }
 
   #addFirst(node) {
     this.head = node;
+  }
+
+  #traverse(node) {
+    while (node.next) node = node.next;
+    return node;
   }
 }
 
