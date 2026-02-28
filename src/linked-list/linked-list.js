@@ -55,6 +55,13 @@ class LinkedList {
     return current.data;
   }
 
+  at(index) {
+    let current = this.head;
+    for (let node = 0; node < index; node++) current = current.next;
+
+    return current?.data;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
