@@ -62,6 +62,17 @@ class LinkedList {
     return current?.data;
   }
 
+  contains(value) {
+    let current = this.head;
+
+    while (current) {
+      if (current.data === value) break;
+      current = current.next;
+    }
+
+    return current?.data === value;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
@@ -81,4 +92,4 @@ linkedList.append('JavaScript');
 
 linkedList.prepend(123);
 
-console.log(linkedList);
+console.log(linkedList.contains('f'));
