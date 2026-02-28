@@ -45,7 +45,7 @@ class LinkedList {
   }
 
   getHead() {
-    return this.length ? this.head.data : undefined;
+    return this.head?.data;
   }
 
   getTail() {
