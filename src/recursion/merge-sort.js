@@ -1,3 +1,10 @@
+function mergeRemainder(arraySide, mergedArray) {
+  while (arraySide.length) {
+    const firstItem = arraySide.shift();
+    mergedArray.push(firstItem);
+  }
+}
+
 function mergeArrays(left, right) {
   const mergedArray = [];
 
@@ -12,15 +19,8 @@ function mergeArrays(left, right) {
     mergedArray.push(firstRightItem);
   }
 
-  while (left.length) {
-    const firstItem = left.shift();
-    mergedArray.push(firstItem);
-  }
-
-  while (right.length) {
-    const firstItem = right.shift();
-    mergedArray.push(firstItem);
-  }
+  mergeRemainder(left, mergedArray);
+  mergeRemainder(right, mergedArray);
 
   return mergedArray;
 }
