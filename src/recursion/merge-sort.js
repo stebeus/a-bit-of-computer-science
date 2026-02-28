@@ -1,5 +1,3 @@
-import { formatArray } from '../utils/formatters.js';
-
 function mergeRemainder(arraySide, mergedArray) {
   while (arraySide.length) {
     const firstItem = arraySide.shift();
@@ -37,9 +35,4 @@ function mergeSort(array) {
   return mergeArrays(mergeSort(left), mergeSort(right));
 }
 
-// Driver script
-
-const jumbledNumbers = [100, -2, 6, 4, 0, 3, 25, 0, 7];
-const sortedNumbers = mergeSort(jumbledNumbers);
-
-console.log(`Merged and sorted array: ${formatArray(sortedNumbers)}.`);
+export { mergeSort };
