@@ -2,6 +2,8 @@ import { LinkedList } from './linked-list.js';
 
 const linkedList = new LinkedList();
 
+// Insertion methods
+
 linkedList.append('Data Structures and Algorithms');
 linkedList.append('JavaScript');
 
@@ -10,11 +12,15 @@ linkedList.prepend('SpongeBob SquarePants');
 
 console.log(linkedList.print());
 
+// Search methods
+
 console.log(linkedList.getHead());
 console.log(linkedList.getTail());
 console.log(linkedList.at(2));
 console.log(linkedList.contains('SpongeBob SquarePants'));
 console.log(linkedList.findIndexOf(123));
+
+// Deletion methods
 
 linkedList.shift('SpongeBob SquarePants');
 
