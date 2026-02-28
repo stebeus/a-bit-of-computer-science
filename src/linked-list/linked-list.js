@@ -39,6 +39,15 @@ class LinkedList {
     return this.length ? this.head.data : undefined;
   }
 
+  getTail() {
+    if (this.length === 0) return undefined;
+
+    let current = this.head;
+    while (current.next) current = current.next;
+
+    return current.data;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
