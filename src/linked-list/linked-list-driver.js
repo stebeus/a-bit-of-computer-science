@@ -17,3 +17,5 @@ console.log(linkedList.contains('SpongeBob SquarePants'));
 console.log(linkedList.findIndexOf(123));
 
 linkedList.shift('SpongeBob SquarePants');
+
+console.log(linkedList.print());
