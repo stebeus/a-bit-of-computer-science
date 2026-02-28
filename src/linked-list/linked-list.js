@@ -34,7 +34,7 @@ class LinkedList {
   }
 
   shift() {
-    if (this.length === 0) return undefined;
+    this.#isEmpty(undefined);
 
     this.length--;
 
@@ -49,7 +49,7 @@ class LinkedList {
   }
 
   getTail() {
-    if (this.length === 0) return undefined;
+    this.#isEmpty(undefined);
 
     const current = this.#traverse(this.head);
     return current.data;
@@ -91,7 +91,7 @@ class LinkedList {
     let current = this.head;
     let output = '';
 
-    if (this.length === 0) return output;
+    this.#isEmpty(output);
 
     while (current) {
       output += `( ${current.data} ) -> `;
@@ -108,6 +108,10 @@ class LinkedList {
   #traverse(node) {
     while (node.next) node = node.next;
     return node;
+  }
+
+  #isEmpty(emptyReturnValue) {
+    if (this.length === 0) return emptyReturnValue;
   }
 }
 
