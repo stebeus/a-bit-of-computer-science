@@ -87,6 +87,20 @@ class LinkedList {
     return index ?? -1;
   }
 
+  print() {
+    let current = this.head;
+    let output = '';
+
+    if (this.length === 0) return output;
+
+    while (current) {
+      output += `( ${current.data} ) -> `;
+      current = current.next;
+    }
+
+    return `${output}null`;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
