@@ -33,6 +33,17 @@ class LinkedList {
     this.head.next = previous;
   }
 
+  shift() {
+    if (this.length === 0) return undefined;
+
+    this.length--;
+
+    const shiftedNode = this.head;
+    this.head = this.head ? this.head.next : null;
+
+    return shiftedNode.data;
+  }
+
   getHead() {
     return this.length ? this.head.data : undefined;
   }
