@@ -1,3 +1,5 @@
+import { formatArray } from '../utils/formatters.js';
+
 function iterateFibonacciSequence(length) {
   const sequence = [0, 1];
 
@@ -21,3 +23,11 @@ function recurseFibonacciSequence(length, number = 2, sequence = [0, 1]) {
 
   return recurseFibonacciSequence(length, number + 1, sequence);
 }
+
+// Driver script
+
+const iteratedSequence = iterateFibonacciSequence(8);
+const recursedSequence = recurseFibonacciSequence(8);
+
+console.log(`Iterated sequence: ${formatArray(iteratedSequence)}.`);
+console.log(`Recursed sequence: ${formatArray(recursedSequence)}.`);
