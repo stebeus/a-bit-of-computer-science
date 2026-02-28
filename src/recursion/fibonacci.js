@@ -10,3 +10,14 @@ function iterateFibonacciSequence(length) {
 
   return sequence;
 }
+
+function recurseFibonacciSequence(length, number = 2, sequence = [0, 1]) {
+  if (number === length) return sequence;
+
+  const firstTerm = sequence[number - 1];
+  const secondTerm = sequence[number - 2];
+
+  sequence.push(firstTerm + secondTerm);
+
+  return recurseFibonacciSequence(length, number + 1, sequence);
+}
