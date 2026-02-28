@@ -9,3 +9,9 @@ linkedList.prepend(123);
 linkedList.prepend('SpongeBob SquarePants');
 
 console.log(linkedList.print());
+
+console.log(linkedList.getHead());
+console.log(linkedList.getTail());
+console.log(linkedList.at(2));
+console.log(linkedList.contains('SpongeBob SquarePants'));
+console.log(linkedList.findIndexOf(123));
