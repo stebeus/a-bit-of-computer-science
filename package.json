@@ -1,0 +1,12 @@
+{
+  "name": "a-bit-of-computer-science",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {},
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.4",
+    "vitest": "^4.0.18"
+  }
+}
