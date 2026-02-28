@@ -35,6 +35,10 @@ class LinkedList {
     this.head.next = previous;
   }
 
+  getHead() {
+    return this.length ? this.head.data : undefined;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
