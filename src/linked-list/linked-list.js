@@ -10,7 +10,7 @@ class LinkedList {
     this.length++;
 
     if (!this.head) {
-      this.head = node;
+      this.#addFirst(node);
       return;
     }
 
@@ -26,13 +26,17 @@ class LinkedList {
     this.length++;
 
     if (!this.head) {
-      this.head = node;
+      this.#addFirst(node);
       return;
     }
 
     const previous = this.head;
     this.head = node;
     this.head.next = previous;
+  }
+
+  #addFirst(node) {
+    this.head = node;
   }
 }
 
