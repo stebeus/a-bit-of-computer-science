@@ -73,6 +73,20 @@ class LinkedList {
     return current?.data === value;
   }
 
+  findIndexOf(value) {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.data === value) break;
+
+      current = current.next;
+      index++;
+    }
+
+    return index ?? -1;
+  }
+
   #addFirst(node) {
     this.head = node;
   }
@@ -92,4 +106,4 @@ linkedList.append('JavaScript');
 
 linkedList.prepend(123);
 
-console.log(linkedList.contains('f'));
+console.log(linkedList);
