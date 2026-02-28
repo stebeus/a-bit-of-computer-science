@@ -120,4 +120,4 @@ linkedList.append('JavaScript');
 
 linkedList.prepend(123);
 
-console.log(linkedList);
+console.log(linkedList.print());
