@@ -7,6 +7,14 @@ class HashMap {
     this.buckets = new Array(this.capacity);
   }
 
+  set(key, value) {
+    const hashCode = this.#hash(key);
+    const entry = { key: hashCode, value };
+
+    this.buckets[hashCode] = entry;
+    this.length++;
+  }
+
   #hash(key) {
     let hashCode = 0;
 
