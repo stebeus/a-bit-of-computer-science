@@ -15,6 +15,13 @@ class HashMap {
     this.length++;
   }
 
+  remove(key) {
+    const hashCode = this.#hash(key);
+
+    delete this.buckets[hashCode];
+    this.length--;
+  }
+
   get(key) {
     const entryValue = this.#getEntryProperty(key, 'value');
     return entryValue ?? null;
