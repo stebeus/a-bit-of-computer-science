@@ -111,6 +111,16 @@ class Tree {
     return depth ?? undefined;
   }
 
+  isBalanced(current = this.root) {
+    if (current == null) return true;
+    if (this.#getHeight(current) === -1) return false;
+
+    const isLeftBranchBalanced = this.isBalanced(current.left);
+    const isRightBranchBalanced = this.isBalanced(current.right);
+
+    return isLeftBranchBalanced && isRightBranchBalanced;
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
