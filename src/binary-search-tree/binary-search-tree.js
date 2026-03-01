@@ -62,6 +62,16 @@ class Tree {
     this.ForEachInOrderedDepth(callback, current.right);
   }
 
+  ForEachPreOrderedDepth(callback, current = this.root) {
+    this.#hasCallback(callback);
+
+    if (current == null) return;
+
+    callback(current.data);
+    this.ForEachPreOrderedDepth(callback, current.left);
+    this.ForEachPreOrderedDepth(callback, current.right);
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
