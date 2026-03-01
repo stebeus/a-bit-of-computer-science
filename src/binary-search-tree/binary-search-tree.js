@@ -121,6 +121,14 @@ class Tree {
     return isLeftBranchBalanced && isRightBranchBalanced;
   }
 
+  rebalance() {
+    const values = [];
+    const orderValues = (value) => values.push(value);
+
+    this.forEachInOrderedDepth(orderValues);
+    this.root = this.#buildTree(values);
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
