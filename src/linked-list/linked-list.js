@@ -56,10 +56,12 @@ class LinkedList {
   }
 
   at(index) {
+    if (index > this.length) return undefined;
+
     let current = this.head;
     for (let node = 0; node < index; node++) current = current.next;
 
-    return current?.data;
+    return current.data;
   }
 
   contains(value) {
