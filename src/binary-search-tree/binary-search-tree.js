@@ -61,4 +61,10 @@ class Tree {
 
     return this.#convertToTree(sortedArray, start, end);
   }
+
+  #getSuccessor(current) {
+    current = current.right;
+    while (current != null && !current.left != null) current = current.left;
+    return current;
+  }
 }
