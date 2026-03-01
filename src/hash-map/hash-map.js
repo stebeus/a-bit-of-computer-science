@@ -23,10 +23,7 @@ class HashMap {
   }
 
   clear() {
-    for (let index = 0; index < this.buckets.length; index++) {
-      delete this.buckets[index];
-    }
-
+    this.buckets = new Array(this.capacity);
     this.length = 0;
   }
 
