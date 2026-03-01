@@ -41,30 +41,21 @@ class HashMap {
   }
 
   keys() {
-    const isEntry = (entry) => entry != null;
     const getKey = ({ key }) => key;
-
-    const entries = this.buckets.filter(isEntry);
-
-    return entries.map(getKey);
+    const keys = this.#map(getKey);
+    return keys;
   }
 
   values() {
-    const isEntry = (entry) => entry != null;
     const getValue = ({ value }) => value;
-
-    const entries = this.buckets.filter(isEntry);
-
-    return entries.map(getValue);
+    const values = this.#map(getValue);
+    return values;
   }
 
   entries() {
-    const isEntry = (entry) => entry != null;
     const getEntry = ({ key, value }) => [key, value];
-
-    const entries = this.buckets.filter(isEntry);
-
-    return entries.map(getEntry);
+    const entries = this.#map(getEntry);
+    return entries;
   }
 
   #hash(key) {
@@ -84,6 +75,12 @@ class HashMap {
     const hashCode = this.#hash(key);
     const entry = this.buckets[hashCode];
     return entry?.[property];
+  }
+
+  #map(callback) {
+    const isEntry = (entry) => entry != null;
+    const entries = this.buckets.filter(isEntry);
+    return entries.map(callback);
   }
 }
 
