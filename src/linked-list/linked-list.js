@@ -9,7 +9,7 @@ class LinkedList {
 
     this.length++;
 
-    if (!this.head) {
+    if (this.head == null) {
       this.#addFirst(node);
       return;
     }
@@ -23,7 +23,7 @@ class LinkedList {
 
     this.length++;
 
-    if (!this.head) {
+    if (this.head == null) {
       this.#addFirst(node);
       return;
     }
