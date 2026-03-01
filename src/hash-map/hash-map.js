@@ -58,6 +58,15 @@ class HashMap {
     return entries.map(getValue);
   }
 
+  entries() {
+    const isEntry = (entry) => entry != null;
+    const getEntry = ({ key, value }) => [key, value];
+
+    const entries = this.buckets.filter(isEntry);
+
+    return entries.map(getEntry);
+  }
+
   #hash(key) {
     let hashCode = 0;
 
