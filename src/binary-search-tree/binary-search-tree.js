@@ -6,6 +6,23 @@ class Tree {
     this.root = this.#buildTree(array);
   }
 
+  includes(value) {
+    let current = this.root;
+
+    while (current) {
+      if (current.data === value) break;
+
+      if (current.data > value) {
+        current = current.left;
+        continue;
+      }
+
+      current = current.right;
+    }
+
+    return current.data === value;
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
