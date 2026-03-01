@@ -2,7 +2,7 @@ import { Node } from './node.js';
 
 class Tree {
   constructor(array) {
-    this.root = array;
+    this.root = this.#buildTree(array);
   }
 
   #convertToTree(array, start, end) {
@@ -16,5 +16,12 @@ class Tree {
     root.right = this.#convertToTree(array, middle + 1, end);
 
     return root;
+  }
+
+  #buildTree(array) {
+    const start = 0;
+    const end = array.length - 1;
+
+    return this.#convertToTree(array, start, end);
   }
 }
