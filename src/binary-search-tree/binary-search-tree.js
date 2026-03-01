@@ -92,6 +92,25 @@ class Tree {
     return this.#getHeight(current);
   }
 
+  depth(value) {
+    let current = this.root;
+    let depth = 0;
+
+    while (current != null) {
+      if (current.data === value) break;
+
+      if (current.data > value) {
+        current = current.left;
+        continue;
+      }
+
+      current = current.right;
+      depth++;
+    }
+
+    return depth ?? undefined;
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
