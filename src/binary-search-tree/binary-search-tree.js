@@ -62,6 +62,20 @@ class Tree {
     this.forEachPreOrderedDepth(callback, current.right);
   }
 
+  forEachLevel(callback, current = this.root, level = 0, queue = []) {
+    this.#hasCallback(callback);
+
+    if (current == null) return;
+
+    if (queue.length <= level) queue.push([]);
+
+    queue[level].push(current.data);
+
+    callback(current.data);
+    this.forEachLevel(current.left, level + 1, queue);
+    this.forEachLevel(current.right, level + 1, queue);
+  }
+
   forEachInOrderedDepth(callback, current = this.root) {
     this.#hasCallback(callback);
 
