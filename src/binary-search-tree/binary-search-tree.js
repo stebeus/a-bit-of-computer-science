@@ -52,6 +52,16 @@ class Tree {
     return current;
   }
 
+  ForEachInOrderedDepth(callback, current = this.root) {
+    this.#hasCallback(callback);
+
+    if (current == null) return;
+
+    this.ForEachInOrderedDepth(callback, current.left);
+    callback(current.data);
+    this.ForEachInOrderedDepth(callback, current.right);
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
@@ -93,5 +103,11 @@ class Tree {
     const successor = this.#getSuccessor(current);
     current.data = successor.data;
     current.right = this.delete(successor.data, current.right);
+  }
+
+  #hasCallback(callback) {
+    if (!callback) {
+      throw new Error('A callback function is required');
+    }
   }
 }
