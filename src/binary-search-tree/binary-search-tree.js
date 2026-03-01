@@ -52,24 +52,34 @@ class Tree {
     return current;
   }
 
-  ForEachInOrderedDepth(callback, current = this.root) {
+  forEachPreOrderedDepth(callback, current = this.root) {
     this.#hasCallback(callback);
 
     if (current == null) return;
 
-    this.ForEachInOrderedDepth(callback, current.left);
     callback(current.data);
-    this.ForEachInOrderedDepth(callback, current.right);
+    this.forEachPreOrderedDepth(callback, current.left);
+    this.forEachPreOrderedDepth(callback, current.right);
   }
 
-  ForEachPreOrderedDepth(callback, current = this.root) {
+  forEachInOrderedDepth(callback, current = this.root) {
     this.#hasCallback(callback);
 
     if (current == null) return;
 
+    this.forEachInOrderedDepth(callback, current.left);
     callback(current.data);
-    this.ForEachPreOrderedDepth(callback, current.left);
-    this.ForEachPreOrderedDepth(callback, current.right);
+    this.forEachInOrderedDepth(callback, current.right);
+  }
+
+  forEachPostOrderedDepth(callback, current = this.root) {
+    this.#hasCallback(callback);
+
+    if (current == null) return;
+
+    this.forEachPostOrderedDepth(callback, current.left);
+    this.forEachPostOrderedDepth(callback, current.right);
+    callback(current.data);
   }
 
   #convertToTree(array, start, end) {
