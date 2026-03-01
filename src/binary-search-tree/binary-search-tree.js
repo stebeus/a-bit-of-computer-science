@@ -34,7 +34,7 @@ class Tree {
       current.right = this.delete(value, current.right);
     }
 
-    this.#deleteNodeWithZeroOrOneChild(current, left, right);
+    this.#deleteNodeWithZeroOrOneChild(current, 'left', 'right');
     this.#deleteNodeWithTwoChildren(current);
 
     return current;
@@ -179,8 +179,8 @@ class Tree {
 
   #deleteNodeWithTwoChildren(current) {
     const successor = this.#getSuccessor(current);
-    current.data = successor.data;
-    current.right = this.delete(successor.data, current.right);
+    current.data = successor?.data;
+    current.right = this.delete(successor?.data, current.right);
   }
 
   #hasCallback(callback) {
