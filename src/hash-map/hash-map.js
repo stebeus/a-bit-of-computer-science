@@ -22,6 +22,14 @@ class HashMap {
     this.length--;
   }
 
+  clear() {
+    for (let index = 0; index < this.buckets.length; index++) {
+      delete this.buckets[index];
+    }
+
+    this.length = 0;
+  }
+
   get(key) {
     const entryValue = this.#getEntryProperty(key, 'value');
     return entryValue ?? null;
