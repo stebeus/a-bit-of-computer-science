@@ -199,3 +199,5 @@ class Tree {
     return totalHeight;
   }
 }
+
+export { Tree };
