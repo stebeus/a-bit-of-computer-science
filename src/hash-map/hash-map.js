@@ -21,6 +21,12 @@ class HashMap {
     return entryValue ?? null;
   }
 
+  has(key) {
+    const hashCode = this.#hash(key);
+    const entryKey = this.buckets[hashCode]?.key;
+    return entryKey === hashCode;
+  }
+
   #hash(key) {
     let hashCode = 0;
 
