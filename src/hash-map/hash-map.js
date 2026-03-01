@@ -28,3 +28,5 @@ class HashMap {
     return hashCode;
   }
 }
+
+export { HashMap };
