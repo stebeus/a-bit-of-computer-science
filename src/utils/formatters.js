@@ -1,3 +1,5 @@
 const formatArray = (array) => array.join(', ');
 
-export { formatArray };
+const formatHashMapEntries = ({ key, value }) => `[${key}, ${value}]`;
+
+export { formatArray, formatHashMapEntries };
