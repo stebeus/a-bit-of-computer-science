@@ -26,9 +26,10 @@ class Tree {
   }
 
   #buildTree(array) {
+    const sortedArray = this.#sortArray(array);
     const start = 0;
-    const end = array.length - 1;
+    const end = sortedArray.length - 1;
 
-    return this.#convertToTree(array, start, end);
+    return this.#convertToTree(sortedArray, start, end);
   }
 }
