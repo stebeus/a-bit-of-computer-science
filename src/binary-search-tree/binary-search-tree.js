@@ -35,6 +35,23 @@ class Tree {
     return current;
   }
 
+  delete(value, current = this.root) {
+    if (current == null) return current;
+
+    if (current.data > value) {
+      current.left = this.delete(value, current.left);
+    }
+
+    if (current.data < value) {
+      current.right = this.delete(value, current.right);
+    }
+
+    this.#deleteNodeWithZeroOrOneChild(current, left, right);
+    this.#deleteNodeWithTwoChildren(current);
+
+    return current;
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
@@ -66,5 +83,15 @@ class Tree {
     current = current.right;
     while (current != null && !current.left != null) current = current.left;
     return current;
+  }
+
+  #deleteNodeWithZeroOrOneChild(current, ...side) {
+    if (current[side] === null) return current[side];
+  }
+
+  #deleteNodeWithTwoChildren(current) {
+    const successor = this.#getSuccessor(current);
+    current.data = successor.data;
+    current.right = this.delete(successor.data, current.right);
   }
 }
