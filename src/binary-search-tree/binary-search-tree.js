@@ -1,3 +1,4 @@
+import { compareNumbers } from '../utils/array-util.js';
 import { Node } from './node.js';
 
 class Tree {
@@ -16,6 +17,12 @@ class Tree {
     root.right = this.#convertToTree(array, middle + 1, end);
 
     return root;
+  }
+
+  #sortArray(array) {
+    const uniqueValues = [...new Set(array)];
+    const sortedArray = uniqueValues.toSorted(compareNumbers);
+    return sortedArray;
   }
 
   #buildTree(array) {
