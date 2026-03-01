@@ -16,15 +16,13 @@ class HashMap {
   }
 
   get(key) {
-    const hashCode = this.#hash(key);
-    const entryValue = this.buckets[hashCode]?.value;
+    const entryValue = this.#getEntryProperty(key, 'value');
     return entryValue ?? null;
   }
 
   has(key) {
-    const hashCode = this.#hash(key);
-    const entryKey = this.buckets[hashCode]?.key;
-    return entryKey === hashCode;
+    const entryKey = this.#getEntryProperty(key, 'key');
+    return entryKey != null;
   }
 
   #hash(key) {
@@ -38,6 +36,12 @@ class HashMap {
     }
 
     return hashCode;
+  }
+
+  #getEntryProperty(key, property) {
+    const hashCode = this.#hash(key);
+    const entry = this.buckets[hashCode];
+    return entry?.[property];
   }
 }
 
