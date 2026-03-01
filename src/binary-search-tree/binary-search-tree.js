@@ -23,6 +23,18 @@ class Tree {
     return current.data === value;
   }
 
+  insert(value, current = this.root) {
+    if (current == null) return new Node(value);
+
+    if (current.data > value) {
+      current.left = this.insert(value, current.left);
+    } else {
+      current.right = this.insert(value, current.right);
+    }
+
+    return current;
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
