@@ -9,6 +9,9 @@ class HashMap {
 
   set(key, value) {
     const hashCode = this.#hash(key);
+
+    if (this.buckets[hashCode] != null) return;
+
     const entry = { key: hashCode, value };
 
     this.buckets[hashCode] = entry;
