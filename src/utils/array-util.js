@@ -1,3 +1,5 @@
+const removeDuplicates = (array) => [...new Set(array)];
+
 const compareNumbers = (a, b) => a - b;
 
-export { compareNumbers };
+export { removeDuplicates, compareNumbers };

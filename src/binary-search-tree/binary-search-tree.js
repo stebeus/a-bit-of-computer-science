@@ -1,4 +1,4 @@
-import { compareNumbers } from '../utils/array-util.js';
+import { compareNumbers, removeDuplicates } from '../utils/array-util.js';
 import { Node } from './node.js';
 
 class Tree {
@@ -7,19 +7,7 @@ class Tree {
   }
 
   includes(value) {
-    let current = this.root;
-
-    while (current) {
-      if (current.data === value) break;
-
-      if (current.data > value) {
-        current = current.left;
-        continue;
-      }
-
-      current = current.right;
-    }
-
+    const current = this.#traverse(this.root, value);
     return current.data === value;
   }
 
@@ -96,6 +84,14 @@ class Tree {
     callback(current.data);
   }
 
+  height(value) {
+    const current = this.#traverse(this.root, value);
+
+    if (current == null) return undefined;
+
+    return this.#getHeight(current);
+  }
+
   #convertToTree(array, start, end) {
     if (start > end) return null;
 
@@ -109,18 +105,29 @@ class Tree {
     return root;
   }
 
-  #sortArray(array) {
-    const uniqueValues = [...new Set(array)];
-    const sortedArray = uniqueValues.toSorted(compareNumbers);
-    return sortedArray;
-  }
-
   #buildTree(array) {
-    const sortedArray = this.#sortArray(array);
+    const uniqueValues = removeDuplicates(array);
+    const sortedArray = uniqueValues.toSorted(compareNumbers);
+
     const start = 0;
     const end = sortedArray.length - 1;
 
     return this.#convertToTree(sortedArray, start, end);
+  }
+
+  #traverse(node, value) {
+    while (node != null) {
+      if (node.data === value) break;
+
+      if (node.data > value) {
+        node = node.left;
+        continue;
+      }
+
+      node = node.right;
+    }
+
+    return node;
   }
 
   #getSuccessor(current) {
@@ -143,5 +150,15 @@ class Tree {
     if (!callback) {
       throw new Error('A callback function is required');
     }
+  }
+
+  #getHeight(node) {
+    if (node == null) return -1;
+
+    const leftHeight = this.#getHeight(node.left);
+    const rightHeight = this.#getHeight(node.right);
+    const totalHeight = Math.max(leftHeight, rightHeight) + 1;
+
+    return totalHeight;
   }
 }
