@@ -6,3 +6,5 @@ class Node {
     this.data = data;
   }
 }
+
+export { Node };
