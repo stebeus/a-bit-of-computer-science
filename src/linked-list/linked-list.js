@@ -36,10 +36,10 @@ class LinkedList {
   shift() {
     this.#isEmpty(undefined);
 
-    this.length--;
-
     const shiftedNode = this.head;
     this.head = this.head ? this.head.next : null;
+
+    this.length--;
 
     return shiftedNode.data;
   }
