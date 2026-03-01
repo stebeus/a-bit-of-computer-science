@@ -1,4 +1,4 @@
-import { compareNumbers, removeDuplicates } from '../utils/array-util.js';
+import { compareNumbers, removeDuplicates } from '../../utils/array-util.js';
 import { Node } from './node.js';
 
 class Tree {
